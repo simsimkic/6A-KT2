@@ -1,0 +1,43 @@
+﻿<Window x:Class="InitialProject.View.AccommodationReservationForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InitialProject.View"
+        mc:Ignorable="d"
+        Title="AccommodationReservationForm" Height="350" Width="400"
+        WindowStartupLocation="CenterOwner">
+
+    <Grid>
+        <DatePicker Name ="StartDatePicker" HorizontalAlignment="Left" Margin="17,69,0,0" VerticalAlignment="Top" SelectedDate="{Binding Path=StartDay, Mode=OneWayToSource, UpdateSourceTrigger=LostFocus}">
+
+        </DatePicker>
+        <DatePicker Name ="EndDatePicker" HorizontalAlignment="Left" Margin="17,120,0,0" VerticalAlignment="Top" SelectedDate="{Binding Path=EndDay, Mode=OneWayToSource, UpdateSourceTrigger=LostFocus}">
+
+        </DatePicker>
+        <Label Content="Start Date" FontSize="10" HorizontalAlignment="Left" Margin="12,48,0,0" VerticalAlignment="Top"/>
+        <Label Content="End Date" FontSize ="10" HorizontalAlignment="Left" Margin="12,98,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="17,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Text ="{Binding Path= StrReservationDays, Mode=OneWayToSource, UpdateSourceTrigger=LostFocus}"/>
+        <Label Content="Days" FontSize ="10" HorizontalAlignment="Left" Margin="12,148,0,0" VerticalAlignment="Top"/>
+        <DataGrid Name="rezervacije"  HorizontalAlignment="Left" Height="225" Margin="158,44,0,0" VerticalAlignment="Top" Width="201"
+                   ItemsSource="{Binding Path = DateRanges, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedItem="{Binding Path= SelectedDateRange, UpdateSourceTrigger=PropertyChanged}"
+                  IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False">
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Reserve" Click="DataGritMenuItemClick"></MenuItem>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Start Date" Binding="{Binding SStartDate}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="End Date" Binding="{Binding SEndDate}" Width="*"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Apply" Click="ApplyFiltersButton" HorizontalAlignment="Left" Height="23" Margin="39,205,0,0" VerticalAlignment="Top" Width="58"/>
+        <Label Content="Reservation for: " HorizontalAlignment="Center" Margin="0,13,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding Path = AccommodationName}" FontStyle="Oblique" HorizontalAlignment="Left" Margin="255,13,0,0" VerticalAlignment="Top" Height="26" Width="135"/>
+        <TextBlock Name ="NoFreeReservation" Visibility="Hidden" HorizontalAlignment="Center" Height="49" Margin="0,274,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="342">
+            <TextBlock TextWrapping="Wrap" Width="308">This accommodation is scheduled in selected date range. Here is free dates in next 90 days.</TextBlock>
+        </TextBlock>
+    </Grid>
+</Window>

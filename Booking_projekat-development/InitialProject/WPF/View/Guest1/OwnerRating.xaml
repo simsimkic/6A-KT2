@@ -1,0 +1,75 @@
+﻿<Window x:Class="InitialProject.View.Guest1.OwnerRating"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InitialProject.View.Guest1"
+        mc:Ignorable="d"
+        Title="OwnerRating" Height="680" Width="560"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="91*"/>
+            <RowDefinition Height="81*"/>
+            <RowDefinition Height="81*"/>
+            <RowDefinition Height="156*"/>
+            <RowDefinition Height="66*"/>
+            <RowDefinition Height="79*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" FontSize="25" FontWeight="DemiBold" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,25,0,10" Width="160">Owner rating</Label>
+
+        <Grid Grid.Column="0" Margin="80,26,80,0" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25*"/>
+                <RowDefinition Height="60*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Height="25" Width="136" Content="Accommodation Name"/>
+            <ComboBox ItemsSource="{Binding AccommodationsName}" HorizontalAlignment="Left" 
+                      Grid.Row="1" VerticalAlignment="Top" Width="170" Height="28" Grid.Column="1"
+                      DisplayMemberPath="Value" SelectedValuePath="Key" SelectedValue="{Binding Path=SelectedAccommodationId, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+        
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="0" Margin="80,3,80,5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="40*"/>
+            </Grid.RowDefinitions>
+            <Label  Content="Hygiene&#xD;&#xA;" HorizontalAlignment="Left" Height="25" VerticalAlignment="Center" Width="70"/>
+            <ComboBox ItemsSource="{Binding Grades}" SelectedItem="{Binding Path=StrCleanliness, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Grid.Row="1" Height="28" Margin="0,0,30,0">
+                
+            </ComboBox>
+        </Grid>
+        <Grid Grid.Row="3" Grid.Column="0" Margin="80,0,80,5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="40*"/>
+            </Grid.RowDefinitions>
+            <Label  Content="Correctness of the owener" HorizontalAlignment="Left" Height="25" VerticalAlignment="Center" Width="149"/>
+            <ComboBox ItemsSource="{Binding Grades}" SelectedItem="{Binding Path=StrCorrectness, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="28" Margin="0,20,30,0" Grid.RowSpan="2">
+            </ComboBox>
+        </Grid>
+        <Grid Grid.Row="4" Grid.Column="0" Margin="80,0,80,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="40*"/>
+            </Grid.RowDefinitions>
+            <Label  Content="Additional Comment" HorizontalAlignment="Left" Height="25" VerticalAlignment="Center" Width="149"/>
+            <TextBox Text="{Binding Path=AdditionalComment, UpdateSourceTrigger=LostFocus}" Grid.Row ="1" TextWrapping="Wrap" AcceptsReturn="True" Margin="0,0,30,0"/>
+        </Grid>
+        <Grid Grid.Row="5" Grid.Column="0" Margin="80,10,80,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="18*"/>
+                <ColumnDefinition Width="7*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox Text="{Binding Path=Image, UpdateSourceTrigger=LostFocus}" Height="28" Grid.Column="0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Width="278"/>
+            <Button Grid.Column="1" Click="AddImage_Click" Content="Add Image" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Center" Height="20" Width="64" />
+
+        </Grid>
+        <Button Content="Submit" HorizontalAlignment="Left" Margin="118,0,0,0" Grid.Row="6" VerticalAlignment="Center" Height="32" Width="111" Click="Submit_Click"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="315,0,0,0" Grid.Row="6" VerticalAlignment="Center" Height="32" Width="111"/>
+    </Grid>
+</Window>

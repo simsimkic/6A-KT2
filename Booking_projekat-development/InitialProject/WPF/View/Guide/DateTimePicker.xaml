@@ -1,0 +1,24 @@
+﻿<Window x:Class="InitialProject.View.DateTimePicker"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InitialProject.View"
+        mc:Ignorable="d"
+        Title="DateTimePicker" Height="226" Width="217">
+
+    <Grid>
+        <DatePicker Name ="SDatePicker" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top" SelectedDate="{Binding Path=Date, Mode=OneWayToSource, UpdateSourceTrigger=LostFocus}" Width="110">
+
+        </DatePicker>
+
+        <ComboBox Name ="MinutesComboBox" IsTextSearchEnabled="True" StaysOpenOnEdit="True" IsEditable="True"
+                      ItemsSource="{Binding Minutes}" HorizontalAlignment="Left" Width ="33" SelectedIndex="0" Margin="122,86,0,62"/>
+
+        <ComboBox Name ="HoursComboBox" IsTextSearchEnabled="True" StaysOpenOnEdit="True" IsEditable="True"
+                      ItemsSource="{Binding Hours}" HorizontalAlignment="Left" Width ="33" SelectedIndex="0" Margin="45,86,0,62"/>
+
+        <Button Content="Save" HorizontalAlignment="Center" Height="30" Margin="0,170,0,0" VerticalAlignment="Top" Width="55" Click="SaveButtonClick"/>
+
+    </Grid>
+</Window>

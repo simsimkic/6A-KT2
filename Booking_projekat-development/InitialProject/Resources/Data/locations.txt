@@ -1,0 +1,97 @@
+1|Tokyo|Japan
+2|Delhi|India
+3|Shanghai|China
+4|São Paulo|Brazil
+5|Mumbai|India
+6|Mexico City|Mexico
+7|Cairo|Egypt
+8|Beijing|China
+9|Dhaka|Bangladesh
+10|Osaka|Japan
+11|New York City|United States
+12|Karachi|Pakistan
+13|Buenos Aires|Argentina
+14|Istanbul|Turkey
+15|Kolkata|India
+16|Manila|Philippines
+17|Lagos|Nigeria
+18|Rio de Janeiro|Brazil
+19|Kinshasa|Democratic Republic of the Congo
+20|Tianjin|China
+21|Paris|France
+22|Lima|Peru
+23|Bangkok|Thailand
+24|Hyderabad|India
+25|London|United Kingdom
+26|Chennai|India
+27|Bogotá|Colombia
+28|Ho Chi Minh City|Vietnam
+29|Lahore|Pakistan
+30|Bangalore|India
+31|Chongqing|China
+32|Miami|United States
+33|Hong Kong|Hong Kong (China)
+34|Ahmedabad|India
+35|Baghdad|Iraq
+36|Santiago|Chile
+37|Hangzhou|China
+38|Toronto|Canada
+39|Riyadh|Saudi Arabia
+40|Singapore|Singapore
+41|Ankara|Turkey
+42|Sydney|Australia
+43|Saint Petersburg|Russia
+44|Casablanca|Morocco
+45|Berlin|Germany
+46|Madrid|Spain
+47|Barcelona|Spain
+48|Nairobi|Kenya
+49|Kiev|Ukraine
+50|Addis Ababa|Ethiopia
+51|Quezon City|Philippines
+52|Salvador|Brazil
+53|Rome|Italy
+54|Brasília|Brazil
+55|Hanoi|Vietnam
+56|Montreal|Canada
+57|Toronto|Canada
+58|Shenzhen|China
+59|Guadalajara|Mexico
+60|Fortaleza|Brazil
+61|Belém|Brazil
+62|Alger|Algeria
+63|Kabul|Afghanistan
+64|Athens|Greece
+65|Damascus|Syria
+66|Nagoya|Japan
+67|Luanda|Angola
+68|Porto Alegre|Brazil
+69|Asunción|Paraguay
+70|Kuala Lumpur|Malaysia
+71|Maputo|Mozambique
+72|Vienna|Austria
+73|Calgary|Canada
+74|Zagreb|Croatia
+75|Johannesburg|South Africa
+76|Warsaw|Poland
+77|Manaus|Brazil
+78|Lyon|France
+79|Cologne|Germany
+80|Naples|Italy
+81|Stockholm|Sweden
+82|Hamburg|Germany
+83|Dubai|United Arab Emirates
+84|Jeddah|Saudi Arabia
+85|Tashkent|Uzbekistan
+86|Milan|Italy
+87|Baku|Azerbaijan
+88|Goiania|Brazil
+89|Kraków|Poland
+90|Fukuoka|Japan
+91|Omsk|Russia
+92|Tbilisi|Georgia
+93|Anshan|China
+94|Bucharest|Romania
+95|Novi Sad|Serbia
+96|Belgrade|Serbia
+97|Subotica|Serbia

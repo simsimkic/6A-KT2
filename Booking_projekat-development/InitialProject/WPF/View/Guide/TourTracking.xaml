@@ -1,0 +1,45 @@
+﻿<Window x:Class="InitialProject.View.TourTracking"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InitialProject.View"
+        mc:Ignorable="d"
+        Title="TourTracking" Height="450" Width="800" WindowStartupLocation ="CenterScreen">
+    <Grid>
+        <DataGrid Name="TourGrid" Grid.Row="0" Margin="10,28,298,176" 
+    ItemsSource="{Binding Path=Tours, UpdateSourceTrigger=PropertyChanged}"
+    SelectedItem="{Binding Path=SelectedTour, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+    IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="false"
+    Visibility="Visible">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Naziv" Width="200" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Lokacija" Width="100" Binding="{Binding Location}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Jezik" Width="100" Binding="{Binding Language}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Datum i vreme" Width="100" Binding="{Binding StartingDateTime}"></DataGridTextColumn>
+            </DataGrid.Columns>
+            
+        </DataGrid>
+
+        <DataGrid Name="TourPointGrid" Grid.Row="0" Margin="517,28,10,176" 
+          ItemsSource="{Binding Path = TourPoints, UpdateSourceTrigger=PropertyChanged}"
+          SelectedItem="{Binding Path= SelectedTourPoint, UpdateSourceTrigger=PropertyChanged}"
+          IsReadOnly="False" SelectionMode="Single" AutoGenerateColumns="false"
+          Visibility="Visible" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Naziv" Width="180" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Red" Width="30" Binding="{Binding Order}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Status" Width="30" Binding="{Binding CurrentStatus}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Content="Zapocni turu" Click="ZapocniTuruButton" HorizontalAlignment="Left" Margin="10,273,0,0" VerticalAlignment="Top" Width="79" Height="30"/>
+        <Button Name ="ChangeStatusButton" Content="Promeni Status" Click="ChangeTourPointStatusButtonClick" HorizontalAlignment="Left" Margin="517,273,0,0" VerticalAlignment="Top" Width="94" Height="30"/>
+        <Button Name ="StopStatusButton" Content="Zaustavi turu" Click="StopTourButton" HorizontalAlignment="Left" Margin="629,273,0,0" VerticalAlignment="Top" Width="94" Height="30"/>
+
+
+
+
+    </Grid>
+</Window>

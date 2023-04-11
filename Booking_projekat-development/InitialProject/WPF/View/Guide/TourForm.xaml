@@ -1,0 +1,78 @@
+﻿<Window x:Class="InitialProject.View.TourForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InitialProject.View"
+        mc:Ignorable="d"
+        Title="Register New Tour" Height="550" Width="450" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid Margin="0,0,0,1">
+        <Grid Grid.Row="0" Grid.Column="0" Margin="21,25,21,10" >
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="78*"></ColumnDefinition>
+                <ColumnDefinition Width="101*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Margin="0,10,0,10" >Naziv:</Label>
+            <Label Grid.Row="1" Grid.Column="0" Margin="0,10,0,10" >Drzava:</Label>
+            <Label Grid.Row="2" Grid.Column="0" Margin="0,10,0,10" >Grad:</Label>
+            <Label Grid.Row="3" Grid.Column="0" Margin="0,10,0,10" >Jezik:</Label>
+            <Label Grid.Row="4" Grid.Column="0" Margin="0,10,0,10" >Max broj gostiju:</Label>
+            <Label Grid.Row="5" Grid.Column="0" Margin="0,10,0,10" >Kljucne tacke:</Label>
+            <Label Grid.Row="6" Grid.Column="0" Margin="0,10,0,10">Datum i vreme pocetka:</Label>
+            <Label Grid.Row="7" Grid.Column="0" Margin="0,10,0,10">Trajanje ture:</Label>
+            <Label Grid.Row="8" Grid.Column="0" Margin="0,10,0,10">Slike:</Label>
+            <Label Grid.Row="9" Grid.Column="0" Margin="0,10,0,10">Opis:</Label>
+
+
+            <TextBox x:Name="NameTextBox" Grid.Row="0" Grid.Column="1" Height="30" Text="{Binding Path=Name, Mode=OneWayToSource }"></TextBox>
+
+            <ComboBox  Name ="CountriesComboBox" Grid.Row="1" Grid.Column="1" IsTextSearchEnabled="True" StaysOpenOnEdit="True" IsEditable="True"
+                      ItemsSource="{Binding Countries}" HorizontalAlignment="Center" Width ="229" Height="30" SelectedIndex="0" SelectionChanged="FilterCities" Margin="0,7,0,9" ></ComboBox>
+
+            <ComboBox Name ="CityComboBox"  Grid.Row="2" Grid.Column="1" IsTextSearchEnabled="True" StaysOpenOnEdit="True" IsEditable="True"
+                      ItemsSource="{Binding Cities}" HorizontalAlignment="Center" Width ="229" Height="30" SelectedIndex="0" Margin="0,7,0,8"></ComboBox>
+
+            <ComboBox Name ="LanguageComboBox"  Grid.Row="3" Grid.Column="1" IsTextSearchEnabled="True" StaysOpenOnEdit="True" IsEditable="True"
+                      ItemsSource="{Binding Languages}" HorizontalAlignment="Center" Width ="229" Height="30" SelectedIndex="0" Margin="0,7,0,8"></ComboBox>
+
+
+            <TextBox Grid.Row="4" Grid.Column="1" Height="30" Text="{Binding Path=MaxGuests, Mode=OneWayToSource}"></TextBox>
+            <ComboBox Name ="TourPointsComboBox"  Grid.Row="5" Grid.Column="1" IsTextSearchEnabled="True" StaysOpenOnEdit="True" IsEditable="False"
+                      ItemsSource="{Binding KeyPoints}"  HorizontalAlignment="Left" Width ="158" Height="30" SelectedIndex="0" Margin="0,6,0,5"></ComboBox>
+            <ComboBox Name ="DateTimeComboBox"  Grid.Row="6" Grid.Column="1" IsTextSearchEnabled="True" StaysOpenOnEdit="True" IsEditable="True"
+                      ItemsSource="{Binding DateAndTime}" HorizontalAlignment="Left" Width ="158" Height="30" SelectedIndex="0" Margin="0,6,0,5"></ComboBox>
+            <TextBox Grid.Row="7" Grid.Column="1" Height="30" Text="{Binding Path=TourDuratation, Mode=TwoWay}"></TextBox>
+            <TextBox x:Name="UrlTextBox" Grid.Row="8" Grid.Column="1" Width ="158" Height="30"  Text="{Binding Path=TourImageUrl, UpdateSourceTrigger=PropertyChanged}" Margin="0,8,72,7"/>
+            <TextBox Grid.Row="9" Grid.Column="1" Height="30" Text="{Binding Path=Description, Mode=TwoWay}"></TextBox>
+
+
+
+            <Button Grid.Column="1" Click="AddKeyPointButton" HorizontalAlignment="Left" Margin="163,0,0,0" Grid.Row="5" VerticalAlignment="Center" Width="38" >Dodaj</Button>
+            <Button Grid.Column="1" Click="AddDatesAndTimesButton" HorizontalAlignment="Left" Margin="163,0,0,0" Grid.Row="6" VerticalAlignment="Center" Width="38" >Dodaj</Button>
+            <Button Grid.Column="1" Click="AddPicturesButton" HorizontalAlignment="Left" Margin="163,0,0,0" Grid.Row="8" VerticalAlignment="Center" Width="38" >Dodaj</Button>
+            <Button Grid.Column="1" Click="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="186,24,0,0" Grid.Row="10" VerticalAlignment="Top" Width="43" />
+            <Button Grid.Column="1" Click="SaveTourButton" Content="Save" HorizontalAlignment="Left" Margin="129,24,0,0" Grid.Row="10" VerticalAlignment="Top" Width="43" />
+            <Button Grid.Column="0" Click="TrackButton" Content="Track" HorizontalAlignment="Left" Margin="0,19,0,0" Grid.Row="10" VerticalAlignment="Top" Width="43" />
+            <Button Click="CancelTourButton" Content="Cancel Tours" HorizontalAlignment="Center" Margin="0,19,0,0" Grid.Row="10" VerticalAlignment="Top" Width="77" />
+            <Button Grid.Column="0" Click="StatisticButton" Content="Statistic" HorizontalAlignment="Left" Margin="131,19,0,0" Grid.Row="10" VerticalAlignment="Top" Width="48" Grid.ColumnSpan="2" />
+
+
+        </Grid>
+
+    </Grid>
+</Window>

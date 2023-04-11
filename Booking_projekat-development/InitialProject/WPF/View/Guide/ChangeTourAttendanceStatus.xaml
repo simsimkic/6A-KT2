@@ -1,0 +1,18 @@
+﻿<Window x:Class="InitialProject.View.Guide.ChangeTourAttendanceStatus"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InitialProject.View.Guide"
+        mc:Ignorable="d"
+        Title="ChangeTourAttendanceStatus" Height="183" Width="362">
+    <Grid>
+        <ComboBox Name="StatusComboBox" IsTextSearchEnabled="True" StaysOpenOnEdit="True"
+                      IsEditable="True" Margin="57,63,181,68" >
+            
+            <ComboBoxItem Content="OnHold"></ComboBoxItem>
+            <ComboBoxItem Content="NotPresent"></ComboBoxItem>
+        </ComboBox>
+        <Button Content="Save" HorizontalAlignment="Left" Height="30" Margin="256,0,0,0" VerticalAlignment="Center" Width="94" Click="SaveButtonClick"/>
+    </Grid>
+</Window>

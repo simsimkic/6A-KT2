@@ -1,0 +1,7 @@
+1|1|1|3|4|5|Sve super|image1;image2;image2;
+2|0|1|3|5|4|asdasdas|123123
+3|0|1|2|5|4|asdasdas|123123
+4|0|1|4|5|3|asdasd as|aasdas;aasdas2;aasdas23;aasdas234
+5|0|1|3|3|4|asdasd|asdasdas
+6|0|1|5|5|3|Sve super samo mi maknite macke sa prozora|slika.jpg
+7|0|1|2|4|5|All good!|slika.png

@@ -1,0 +1,58 @@
+﻿<Window x:Class="InitialProject.View.TourPointForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InitialProject.View"
+        mc:Ignorable="d"
+        Title="Tour Point" Height="312" Width="500" WindowStyle="None">
+    <Grid Margin="0,0,0,7">
+        <Grid Grid.Row="0" Grid.Column="0" Margin="10,25,21,10" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="0" Grid.Column="0" Margin="0,0,38,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="120"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="45"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0"  >Naziv:</Label>
+                <Label Grid.Row="1" Grid.Column="0"  >Opis:</Label>
+
+                <TextBox Grid.Row="0" Grid.Column="1" Height="30" Text="{Binding Path=NameTourPoint, Mode=OneWayToSource }" Margin="0,10,0,89"></TextBox>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=Description, Mode=OneWayToSource }" Margin="0,10,0,35"/>
+                <Button Grid.Row="1" Grid.Column="1" Margin="47,95,52,5" Click="AddTourPoint_ButtonClick">Dodaj</Button>
+
+            </Grid>
+
+            <Button Margin="124,0,57,223" Grid.Column="1" Click="EditButton">Izmeni</Button>
+            <Button Margin="182,0,0,223" Grid.Column="1" Click="RemoveButton">Obrisi</Button>
+
+            <Button Name = "SaveButtoon" Margin="124,229,58,-6" Grid.Column="1" Click="SaveButton" IsEnabled="False">Sacuvaj</Button>
+            <Button Margin="182,229,0,-6" Grid.Column="1" Click="CloseButton">Ugasi</Button>
+
+            <DataGrid Grid.Row="0" Margin="234,31,0,25" Grid.ColumnSpan="2" 
+                  ItemsSource="{Binding Path = TourPoints, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedItem="{Binding Path= SelectedTourPoint, UpdateSourceTrigger=PropertyChanged}"
+                  IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="false"
+                  Visibility ="Visible">
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Naziv" Width="200" Binding="{Binding Name}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Red" Width="100" Binding="{Binding Order}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </Grid>
+
+
+    </Grid>
+</Window>

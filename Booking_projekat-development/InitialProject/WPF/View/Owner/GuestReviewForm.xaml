@@ -1,0 +1,49 @@
+﻿<Window x:Class="InitialProject.View.GuestReviewForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InitialProject.View"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Guest Review Form" Height="250" Width="322">
+    <Grid>
+        <Grid Grid.Row="0" Margin="0,10,0,38" HorizontalAlignment="Center" Width="232">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="8*"></RowDefinition>
+                <RowDefinition Height="9*"></RowDefinition>
+                <RowDefinition Height="14*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="27,2,82,34" Grid.RowSpan="2">Čistoća:</Label>
+            <Label Grid.Column="0" Grid.ColumnSpan="2" Margin="0,7,109,0" Grid.Row="1">Postovanje pravila:</Label>
+            <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="27,10,82,18">Komentar:</Label>
+
+            <TextBox Grid.Row="2" Grid.Column="1" Height="42" VerticalAlignment="Center" Text="{Binding Path=OwnerComment,Mode=OneWayToSource}"/>
+
+            <ComboBox Grid.Row="1" Grid.Column="1" Margin="0,9,0,9" Text="{Binding Path=RuleFollowingGrade, Mode=OneWayToSource}">
+                <ComboBoxItem>1</ComboBoxItem>
+                <ComboBoxItem>2</ComboBoxItem>
+                <ComboBoxItem>3</ComboBoxItem>
+                <ComboBoxItem>4</ComboBoxItem>
+                <ComboBoxItem>5</ComboBoxItem>
+            </ComboBox>
+
+            <ComboBox Grid.Row="0" Grid.Column="1" Margin="0,7,0,7" Text="{Binding Path=HygieneGrade, Mode=OneWayToSource}">
+                <ComboBoxItem>1</ComboBoxItem>
+                <ComboBoxItem>2</ComboBoxItem>
+                <ComboBoxItem>3</ComboBoxItem>
+                <ComboBoxItem>4</ComboBoxItem>
+                <ComboBoxItem>5</ComboBoxItem>
+            </ComboBox>
+
+        </Grid>
+        <Button Content="Submit" Click="SubmitReview" HorizontalAlignment="Left" Margin="67,193,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.098,-0.979" Width="64"/>
+        <Button Content="Cancel" Click="Close"  HorizontalAlignment="Left" Margin="187,193,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.163,-0.295" Width="64"/>
+
+    </Grid>
+</Window>
